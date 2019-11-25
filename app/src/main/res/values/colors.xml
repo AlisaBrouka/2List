@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#A54A4D</color>
+    <color name="colorPrimaryDark">#A54A4D</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorDayWithoutEvents">#eaf7ff</color>
+    <color name="colorDayWithLittleEvents">#C5E9FF</color>
+    <color name="colorDayWithAlotOfEvents">#4f79a1</color>
+    <color name="colorbackground">#E5E5E5</color>
+    <color name="colorRed">#262626</color>
+</resources>

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/add_red"
+            android:id="@+id/addTask"
+            android:background="@drawable/edittext_with_borders"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:hint=" Что вы хотите сделать?"
+            android:onClick="onClick"
+    />
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listSubTask"
+            app:layout_constraintTop_toBottomOf="@id/addTask"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/addDate"
+            app:fontFamily="Avenir Next Cyr"
+            android:textSize="16sp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="30dp"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/listSubTask"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="День задачи"
+            android:drawableRight="@drawable/expand_more"
+            android:onClick="onClick"
+    />
+
+    <TextView
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/addDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="#b3b3b3"
+            app:fontFamily="Avenir Next Cyr"
+            android:textSize="16sp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentDate"
+    />
+
+
+    <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/calendar"
+            app:layout_constraintTop_toBottomOf="@id/currentDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:id="@+id/header"
+                android:orientation="horizontal"
+                android:gravity="center"
+        >
+
+            <ImageButton
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buttonPreviousMonth"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/button_left"
+                    android:onClick="onClick"
+
+            />
+            <TextView
+                    android:text="Month Year"
+                    android:id="@+id/monthYear"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+            />
+            <ImageButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/buttonNextMonth"
+                    android:background="@drawable/button_right"
+                    android:onClick="onClick"
+            />
+        </LinearLayout>
+
+        <TableLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="1dp"
+                app:layout_constraintTop_toBottomOf="@id/calendar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_below="@+id/header"
+                android:stretchColumns="*"
+                android:onClick="onClick"
+        >
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/week"
+                    android:layout_marginBottom="1dp"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/monday"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/sunday"
+
+                        android:gravity="center"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/week1"
+                    android:layout_marginBottom="1dp"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week1Sunday"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/week2"
+                    android:layout_marginBottom="1dp"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week2Sunday"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/week3"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week3Sunday"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/week4"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week4Sunday"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/week5"
+
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Friday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Saturday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week5Sunday"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/week6"
+                    android:layout_marginBottom="1dp"
+            >
+                <TextView
+                        android:text="Пн"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Monday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вт"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Tuesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Ср"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Wednesday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Чт"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Thursday"
+                        android:layout_marginRight="1dp"
+
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Пт"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Friday"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Сб"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Saturday"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+                <TextView
+                        android:text="Вс"
+                        android:layout_weight="1"
+                        android:id="@+id/week6Sunday"
+                        android:gravity="center"
+                        android:onClick="onClick"
+                />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="40dp"
+            android:paddingLeft="40dp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/saveTasks"
+            app:fontFamily="Avenir Next"
+            android:background="@drawable/button_rounded_red"
+            app:layout_constraintTop_toBottomOf="@id/calendar"
+            android:layout_marginTop="76dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="30dp"
+            android:text="Сохранить"
+            android:onClick="onClick"
+    />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:itemIconSize="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
